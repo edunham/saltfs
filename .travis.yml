@@ -26,6 +26,7 @@ matrix:
       dist: trusty
 
 before_install:
+  - sudo apt-get install traceroute
   - traceroute archive.ubuntu.com
   - .travis/install_salt -F -c .travis -- "${TRAVIS_OS_NAME}"
 
