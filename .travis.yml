@@ -27,6 +27,7 @@ matrix:
 
 before_install:
   - .travis/install_salt -F -c .travis -- "${TRAVIS_OS_NAME}"
+  - cat /etc/apt/sources.list
 
 install:
   - .travis/setup_salt_roots
