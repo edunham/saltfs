@@ -12,6 +12,9 @@ matrix:
       dist: trusty
 before_install:
   - .travis/install_salt -F -c .travis -- "${TRAVIS_OS_NAME}"
+  - sudo apt-get -o Dpkg::Options::="--force-overwrite" -qq -f install g++-arm-linux-gnueabihf g++-aarch64-linux-gnu
+  - sudo apt-cache search lib32stdc++
+#  - sudo apt-get install libstdc++6:i386 libc6:i386 lib32z1 default-jdk expect
 
 install:
   - .travis/setup_salt_roots
