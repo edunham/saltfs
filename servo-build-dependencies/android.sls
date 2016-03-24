@@ -17,8 +17,8 @@ android-dependencies:
   pkg.installed:
     - pkgs:
       {% if '64' in grains['cpuarch'] %}
-      - libc6:i386
-      - libstdc++6:i386
+      - lib32c6
+      - lib32stdc++6
       {% endif %}
       - default-jdk
       - ant
